@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+$font-family: "Roboto";
+$font-size-l: 14px;
+$font-size-m: 12px;
+$font-size-s: 10px;
+
+$color-black: #000;
+$color-gray: #909090;
+$color-gray-light: #efefef;
+$color-white: #fff;
+// $color-hashtag: #045FD4;
+// $color-subscribe: #FF0000;
+
+// $padding: 12px;
+
+* {
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+html,
+body,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: $color-gray-light;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  height: 48px;
+  background-color: $color-black;
+  padding: 12px;
+  color: $color-white;
+  justify-content: space-between;
+  align-items: center;
+  // font-size: 20px;
+
+  & .logo {
+    font-size: 20px;
+
+    & i {
+      color: red;
+    }
+  }
+
+  & .option {
+    & * {
+      cursor: pointer;
+      margin-left: 12px;
+    }
+  }
+}
+
+.player {
+  background-color: $color-black;
+  text-align: center;
+
+  & video {
+    width: 100vw;
+    max-width: 1000px;
+  }
+}
+
+.infoAndUpNext {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+
+  & .info {
+    & .metadata {
+      display: flex;
+      flex-direction: column;
+
+      & .hashtag {
+        color: royalblue;
+        font-size: $font-size-m;
+
+        & li {
+          display: inline;
+          margin-right: $font-size-m;
+        }
+      }
+
+      & .title {
+        color: $color-black;
+        font-size: $font-size-l;
+        margin-bottom: 6px;
+      }
+
+      & .views {
+        color: $color-gray;
+        font-size: $font-size-m;
+      }
+    }
+
+    & .action {
+      display: flex;
+      justify-content: space-around;
+      margin: 12px 0;
+
+      & button {
+        // border: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        color: $color-gray;
+
+        & i {
+          margin-bottom: 6px;
+
+          &.active {
+            color: royalblue;
+          }
+        }
+      }
+    }
+
+    & .channel {
+      border: 1px solid $color-gray-light;
+      height: 70px;
+      border-left: none;
+      // padding: 12px 0;
+      display: flex;
+      justify-content: space-between;
+
+      & .userdata {
+        display: flex;
+        align-items: center;
+
+        & img {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          margin-right: 12px;
+        }
+
+        & .myInfo {
+          display: flex;
+          flex-direction: column;
+          margin-left: 12px;
+
+          & span:first-child {
+            font-size: $font-size-l;
+          }
+
+          & span:last-child {
+            font-size: $font-size-m;
+            color: $color-gray;
+          }
+        }
+      }
+
+      & .subscribe {
+        // border: none;
+        font-size: $font-size-l;
+        color: red;
+        line-height: 70px;
+        // background-color: $color-gray-light;
+      }
+    }
+  }
+
+  & .upNext {
+    & > .title {
+      display: inline-block;
+      margin: 12px 0;
+      color: $color-gray;
+      font-size: $font-size-l;
+    }
+
+    & .items {
+      display: flex;
+      flex-direction: column;
+
+      & .item {
+        display: flex;
+        flex-direction: row;
+        
+        &:not(:last-child) {
+          margin-bottom: 12px;
+        }
+
+        & .img {
+          flex-basis: 35%;
+          margin-right: 12px;
+
+          & img {
+            width: 100%;
+          }
+        }
+
+        & .vidInfo {
+          flex-basis: 60%;
+          margin-right: 12px;
+          display: flex;
+          flex-direction: column;
+
+          & .title {
+            color: $color-black;
+            font-size: $font-size-m;
+          }
+
+          & .name {
+            color: $color-gray;
+            font-size: $font-size-s;
+          }
+
+          & .views {
+            color: $color-gray;
+            font-size: $font-size-s;
+          }
+        }
+
+        & .more {
+          flex-basis: 5%;
+          height: 100%;
+
+
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .infoAndUpNext {
+    flex-direction: row;
+
+    & .info {
+      width: 50%;
+      margin-right: 12px;
+    }
+
+    & .upNext {
+      width: 50%;
+
+      & > .title {
+        margin-top: 0;
+      }
+    }
+  }
+}
